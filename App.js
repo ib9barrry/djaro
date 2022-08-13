@@ -1,14 +1,23 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
+import AppNavigator from './app/navigation/AppNavigator';
+import { NavigationContainer } from '@react-navigation/native';
+import AudioProvider from './app/context/AudioProvider';
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+   <AudioProvider>
+     <NavigationContainer>
+       <AppNavigator />
+     </NavigationContainer>
+   </AudioProvider>
+   
   );
 }
+
+
+
+
 
 const styles = StyleSheet.create({
   container: {
